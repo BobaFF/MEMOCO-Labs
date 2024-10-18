@@ -1,6 +1,10 @@
 # Methods and Models for Combinatorial Optimization
 
 This repository contains the activities of the laboratory sessions held during the course **Methods and Models for Combinatorial Optimization** as part of the Master’s Degree in **Computer Science** at UniPD, taught by Professor Luigi De Giovanni for the academic year 2024/2025.
+Laboratory sessions: 
+- [Lab 1](#lab-1) - 10/10/2024
+
+- [Lab 2](#lab-2) - 17/10/2024
 
 ## Lab 1 
 ### Environment:
