@@ -1,0 +1,43 @@
+{
+    "modelname": "refrigerators transportation",
+    "decision_domain": "discrete",
+    "Origins": [
+        "A",
+        "B",
+        "C"
+    ],
+    "Destinations": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "O_Capacity": [
+        50,
+        70,
+        30
+    ],
+    "D_Capacity": [
+        20,
+        60,
+        30,
+        40
+    ],
+    "Costs": [
+        [6, 8, 3, 4],
+        [4, 2, 1, 3],
+        [4, 2, 6, 5]
+    ],
+    
+    "cost_threshold_percent": 0.5,
+    
+    "LowCost": 2,
+    "LowCostMinOnLink": 15,
+
+    "SpecialDestination" : 3,
+    "SpecialOrigin": "A",
+    "MinToSpecialDest": 5,
+
+    "SignificantNumber": 2, 
+    "SignificantFraction": 0.10
+}
