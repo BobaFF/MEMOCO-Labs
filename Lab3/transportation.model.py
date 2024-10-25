@@ -16,7 +16,7 @@ J = data["Destinations"]
 # capacity of origin i in I
 O = {I[i] : data["O_Capacity"][i] for i in range(len(I))}
 # request of destionation j in J
-D = {J[j] : data["D_Capacity"][j] for j in range(len(J))}
+D = {J[j] : data["D_Request"][j] for j in range(len(J))}
 #unit transportation cost from origin i in I to destination j in J
 C = {(I[i],J[j]) : data["Costs"][i][j] for i in range(len(I)) for j in range(len(J))}
 
