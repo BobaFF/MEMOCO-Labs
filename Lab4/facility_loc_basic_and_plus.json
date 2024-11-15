@@ -1,0 +1,19 @@
+{
+  "modelname" : "fixed cost location",
+  
+  "___comment01": "set of potential locations' names. Each location is identified by its position, first position is 0",
+  "I_names": ["loc0","loc1","loc2","loc3","loc4","loc5","loc6","loc7","loc8","loc9"],
+
+  "___comment02": "available budget",
+  "W": 1e6,
+  
+  "___comment03": "lists of fixed costs, variable costs and revenues for each location (euro per 100sqm)",
+  "f_list": [1000,1210,2000,1500,1350,1560,1450,2100,1720,1110],
+  "c_list": [ 250, 230, 190, 210, 200, 210, 260, 255, 220, 270],
+  "r_list": [3000,4000,6600,5000,6000,6500,3500,2500,2600,4700],
+
+  "___comment04": "PLUS: maximum and minimum number of open locations and their minimum extension",
+  "max_num_open": 5,
+  "min_num_open": 3,
+  "min_size_to_open": 15
+}

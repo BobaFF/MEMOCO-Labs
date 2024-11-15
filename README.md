@@ -8,6 +8,8 @@ Laboratory sessions:
 
 - [Lab 3](#lab-3) - 24/10/2024
 
+- [Lab 4](#lab-4) - 7/11/2024
+
 ## Lab 1 
 ### Environment:
 
@@ -49,3 +51,8 @@ The constraints are:
     2. **Special origin & destination**: destination _SpecialDestination_ should receive at least _MinToSpecialDest_ units from each origin, except for origin _SpecialOrigin_;
     3. **Significant supply**: At least a _SignificantNumber_ of origins must significantly supply each destination. "Significantly supply" means no less than a _SignificantFraction_.
     
+## Lab 4
+### Environment:
+Same as Lab 1.
+- `facility_loc.py`: implementation of the facility locations problem; it solves the model using the `facility_loc_basic_and_plus.json` data. In this model we use lists, which are more efficient than dictionaries: the creation and resolution of the model is way faster for this reason.
+
