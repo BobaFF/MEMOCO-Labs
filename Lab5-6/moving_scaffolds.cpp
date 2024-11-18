@@ -1,5 +1,6 @@
 /**
  * @file moving_scaffolds.cpp
+ * By prof. De Giovanni
  * @brief 
  */
 
