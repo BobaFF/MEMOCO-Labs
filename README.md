@@ -10,6 +10,10 @@ Laboratory sessions:
 
 - [Lab 4](#lab-4) - 7/11/2024
 
+- [Lab 5-6](#lab-5-6) - 7/11/2024 & 14/11/2024
+
+- [More models](#more-models)
+
 ## Lab 1 
 ### Environment:
 
@@ -56,3 +60,17 @@ The constraints are:
 Same as Lab 1.
 - `facility_loc.py`: implementation of the facility locations problem; it solves the model using the `facility_loc_basic_and_plus.json` data. In this model we use lists, which are more efficient than dictionaries: the creation and resolution of the model is way faster for this reason.
 
+## Lab 5-6
+### Envirnomnet:
+- **C++ version:** 16.0.0
+- **Libraries:** `Cplex C APIs`
+
+> **Note:** Prof. De Giovanni provided us with `cpxmacro.h`, which containins macros to save us some times, and a `makefile` to easily compile the program.
+
+- `moving_scaffolds.cpp`: implementation of the "Moving scaffolds between yards" problem.
+
+## More models
+### Envirnomnet:
+- **C++ version:** 16.0.0
+- **Libraries:** `Cplex C APIs`
+More models implemented using Cplex C APIs.
