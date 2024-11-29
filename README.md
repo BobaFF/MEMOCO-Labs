@@ -131,11 +131,11 @@ The key is to determine the best move. When the best move is identified, we gene
 
 Using the following formula, if the variation exceeds the current `bestDecrement` we can immediately determine the correct move.
 
-Reversing sequence between \(i\) and \(j\) in the sequence \(\langle 1, \dots, h, i, \dots, j, l, \dots, 1 \rangle\):
+Reversing sequence between *i* and *j* in the sequence ![Formula](https://latex.codecogs.com/png.latex?%5Clangle%201%2C%20%5Cdots%2C%20h%2C%20i%2C%20%5Cdots%2C%20j%2C%20l%2C%20%5Cdots%2C%201%20%5Crangle)
 
-\[
-C_\text{new} = C_\text{old} - c_{hi} - c_{jl} + c_{hj} + c_{il}
-\]
+
+![Formula](https://latex.codecogs.com/png.latex?C_\text{new}=C_\text{old}-c_{hi}-c_{jl}+c_{hj}+c_{il})
+
 
 ## More models
 ### Envirnomnet:
