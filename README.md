@@ -12,6 +12,8 @@ Laboratory sessions:
 
 - [Lab 5-6](#lab-5-6) - 7/11/2024 & 14/11/2024
 
+- [Lab 7](#lab-7) - 28/11/2024
+
 - [More models](#more-models)
 
 ## Lab 1 
@@ -58,16 +60,82 @@ The constraints are:
 ## Lab 4
 ### Environment:
 Same as Lab 1.
+
+### Exercises:
 - `facility_loc.py`: implementation of the facility locations problem; it solves the model using the `facility_loc_basic_and_plus.json` data. In this model we use lists, which are more efficient than dictionaries: the creation and resolution of the model is way faster for this reason.
 
 ## Lab 5-6
-### Envirnomnet:
+### Environment:
 - **C++ version:** 16.0.0
 - **Libraries:** `Cplex C APIs`
 
 > **Note:** Prof. De Giovanni provided us with `cpxmacro.h`, which containins macros to save us some times, and a `makefile` to easily compile the program.
 
+### Exercises:
 - `moving_scaffolds.cpp`: implementation of the "Moving scaffolds between yards" problem.
+
+## Lab 7
+### Environment:
+- **C++ version:** 16.0.0
+
+The professor provided us with the following files for the implementation of the local search algorithm:  
+- `TSP.h`: a class that represents the TSP problem. It reads data from an argument `.dat` file.  
+- `TSPSolution.h`: a class that represents a solution for a TSP problem. A solution is represented as a path in a vector of `n + 1` elements, where the first and last elements are set to `0` (representing a closed loop).  
+- `TSPSolver.h`/`TSPSolver.cpp`: a class that solves the TSP problem using neighborhood search and 2-opt moves. The solver is based on a local search strategy.
+
+The objective of the lab is to implement the `solve()` function in the `TSPSolver` class, along with any additional helper functions required.
+
+
+
+The aim of the lab is to implement the `solve()` function in the ``TSPSolver`` class, along with any additional helper functions needed.
+
+
+```c++ 
+TSPSolution apply2optSwap(const TSPSolution& , const TSPMove&)
+```
+This helper function applies a 2-opt swap, which reverses a substring of the solution's path. The parameters are:  
+- `solution`: the `TSPSolution` to which the swap is applied.  
+- `move`: a `TSPMove` struct containing the start and end indices of the substring to be reversed.  
+
+The function returns a new `TSPSolution` instance.
+ 
+```c++
+bool solve(const TSP& tsp , const TSPSolution& initSol , TSPSolution& bestSol)
+```
+
+The `apply2optSwap` function should be used inside two nested loops, as all possible neighbors must be considered.
+The following constraints apply:  
+1. The indices must not be equal, as we are not interested in substrings of length `1`.  
+2. The first and last elements of `sol.sequence` must remain unchanged because they are fixed. 
+3. The start index of the substring, `i`, should range from `1` to `n-2` (excluding).  
+4. The end index of the substring, `j`, should range from `i + 1` to `n-1` (excluding).
+
+*E.g.: `sol.sequence.size() = n + 1`
+ `sol.sequence = < 0, 5, 9, ..., 6, 3, 0 >`*, indexes are ``<0, 1, 2, ..., n-2, n-1, n>``: 
+
+After both loops, we check if the best neighbor represents an improvement over the current solution.  
+- If no improvement is found, the search is complete, and the local optimum has been reached.  
+- Otherwise, the current solution is updated with the best neighbor, and the process is repeated.
+
+> **Note:** The evaluation method is in the solver, not in the solution.
+
+### Considerations
+
+The current implementation works, but it is not efficient. To improve efficiency, we should adopt an incremental approach. 
+
+Generating all possible solutions is unnecessary. Instead, we are only interested in evaluating them. Therefore, it is not required to explicitly create a neighbor to evaluate it.  
+
+To make the implementation more efficient, we should focus on identifying the best neighbor directly. Once the best neighbor is identified, we can move to it without generating all possible neighbors.  
+
+The key is to determine the best move. When the best move is identified, we generate only the corresponding solution, avoiding the need to evaluate all possible moves.  
+
+Using the following formula, if the variation exceeds the current `bestDecrement` we can immediately determine the correct move.
+
+Reversing sequence between \(i\) and \(j\) in the sequence \(\langle 1, \dots, h, i, \dots, j, l, \dots, 1 \rangle\):
+
+\[
+C_\text{new} = C_\text{old} - c_{hi} - c_{jl} + c_{hj} + c_{il}
+\]
 
 ## More models
 ### Envirnomnet:
